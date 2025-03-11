@@ -1,80 +1,73 @@
-Below is an example README.md file that you can include in your repository:
+
+### 🦖 Dino File Content Search  
+
+**Dino_File_Content_Search** is a high-performance, concurrent file content search tool built with **Rust**. It efficiently scans files for specific content while leveraging system capabilities to maximize performance.  
 
 ---
 
-```markdown
-# Dino File Content Search
+## ⚡ Features  
+✅ **Multi-threaded & Asynchronous** – Blazing-fast search with Tokio.  
+✅ **Optimized for Large Directories** – Handles thousands of files efficiently.  
+✅ **Customizable Search Patterns** – Supports regex and plain text searches.  
+✅ **System-Aware Resource Management** – Automatically adjusts to OS limits.  
 
-Dino File Content Search is a high-performance file searching utility written in Rust. It uses Tokio for asynchronous I/O and Rayon for parallel CPU-bound processing to efficiently search through directories and subdirectories for files containing specific text.
+---
 
-## Features
+## 🚀 Installation  
 
-- **Asynchronous Directory Traversal:** Uses Tokio for non-blocking, recursive directory scanning.
-- **Parallel File Processing:** Leverages Rayon to parallelize file reading and content searching.
-- **Resource Management:** Dynamically limits the number of open files to prevent system overload.
-- **Cross-Platform:** Designed to work on Unix-like systems. May require adjustments on Windows.
+Clone the repository:  
 
-## Prerequisites
+```sh
+git clone https://github.com/natiqmammad/Dino_File_Content_Search.git
+cd Dino_File_Content_Search
+```
 
-- **Rust:** Ensure you have the latest stable version of [Rust](https://www.rust-lang.org/tools/install) installed.
-- **Git:** For cloning and managing the repository.
-- **System File Descriptor Limit:** This project may open a large number of files simultaneously. To avoid errors such as "Too many open files," it is recommended to increase your file descriptor limit.
+Build the project using **Cargo**:  
 
-### Increasing File Descriptor Limit
+```sh
+cargo build --release
+```
 
-On Unix-like systems (Linux/macOS), you can increase the file descriptor limit by running the following command in your terminal before running the application:
+---
+
+## 🔥 Optimizing System Limits for Maximum Performance  
+
+By default, most systems have a limit on the number of open files. To prevent errors and enhance performance, increase the limit using:  
 
 ```sh
 ulimit -n 65535
 ```
 
-This sets the maximum number of open files to 65,535. You might also want to adjust your system configuration files if you need this change to persist across reboots.
+For **permanent changes**, update `/etc/security/limits.conf` (Linux users).  
 
-## Installation
+---
 
-1. **Clone the repository:**
+## 🛠 Usage  
 
-   ```sh
-   git clone https://github.com/natiqmammad/Dino_File_Content_Search.git
-   cd Dino_File_Content_Search
-   ```
-
-2. **Build the project using Cargo:**
-
-   ```sh
-   cargo build --release
-   ```
-
-## Usage
-
-Run the application using Cargo or execute the compiled binary:
+Run the search tool:  
 
 ```sh
-cargo run --release
+cargo run --release -- <directory> "<search_pattern>"
 ```
 
-Upon starting the program, you will be prompted to:
+Example:  
 
-1. Enter the directory path you wish to search.
-2. Enter the context text (the string you want to search for within files).
-
-The program will recursively search the directory and its subdirectories for files that contain the specified text, printing the paths of matching files to the console.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit issues or pull requests. When contributing, ensure that your code adheres to the project's style guidelines and includes appropriate tests.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-For any questions or support, please contact:
-- **Email:** maga.natiq@gmail.com
-- **GitHub:** [natiqmammad](https://github.com/natiqmammad)
+```sh
+cargo run --release -- /home/user/docs "Rust programming"
 ```
 
 ---
 
-Simply save this content into a `README.md` file at the root of your project repository, commit the changes, and push them to GitHub. This README includes instructions on building, running, and configuring your system's file descriptor limit with `ulimit -n 65535` for optimal performance.
+## 🤝 Contributing  
+
+Pull requests and suggestions are always welcome! Feel free to contribute and improve Dino_File_Content_Search.  
+
+---
+
+## 📜 License  
+
+This project is **open-source** and available under the **MIT License**.  
+
+---
+
+Let me know if you want any modifications! 🚀🔥
